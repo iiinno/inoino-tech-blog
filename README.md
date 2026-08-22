@@ -4,7 +4,7 @@
 
 Astro と AstroPaper テーマで静的サイトを生成し、GitHub Pages で公開する。
 
-公開 URL は https://iiinno.github.io/travelogue/ だ。
+公開 URL は https://iiinno.github.io/journey-days/ だ。
 
 新しいチャットやクラウドエージェントは、この README と `AGENTS.md` を読めば作業体制が分かる。
 
@@ -15,9 +15,9 @@ Astro と AstroPaper テーマで静的サイトを生成し、GitHub Pages で�
 - GitHub Actions（`.github/workflows/deploy.yml`）による自動ビルド・デプロイ
 - GitHub Pages ホスティング
 
-`astro.config.ts` に `site: "https://iiinno.github.io"` と `base: "/travelogue"` が設定済みだ。
+`astro.config.ts` に `site: "https://iiinno.github.io"` と `base: "/journey-days"` が設定済みだ。
 
-サイトはルートではなく `/travelogue/` 配下で配信される。
+サイトはルートではなく `/journey-days/` 配下で配信される。
 
 `base` を外すとリンクと画像パスが壊れる。
 
@@ -35,13 +35,13 @@ Node.js は `package.json` の `engines` どおり 22.12.0 以上が必要だ。
 |------|------|------|
 | ローカル | `C:\Users\inoue\travelogue`（Windows PC） | 作業本体 |
 | origin | `inouemasaki-ai-ts:travelogue`（Tailscale 経由のプライベートリポジトリ） | バックアップ |
-| github | https://github.com/iiinno/travelogue （public） | GitHub Pages の公開元 |
+| github | https://github.com/iiinno/journey-days （public） | GitHub Pages の公開元 |
 
 リモート名は `origin` と `github` だ。
 
 記事を公開するには `git push github main` する。
 
-Actions がビルドし、https://iiinno.github.io/travelogue/ にデプロイする。
+Actions がビルドし、https://iiinno.github.io/journey-days/ にデプロイする。
 
 origin はバックアップなので、公開と合わせて `git push origin main` で同期する。
 
@@ -77,7 +77,7 @@ origin はバックアップなので、公開と合わせて `git push origin m
 
 記事の写真・地図は `public/assets/` に置く。
 
-Markdown からの参照は `/travelogue/assets/<ファイル名>` だ。
+Markdown からの参照は `/journey-days/assets/<ファイル名>` だ。
 
 `base` があるため `/assets/...` だけでは 404 になる。
 
@@ -96,7 +96,7 @@ npm install
 npm run dev
 ```
 
-開発サーバではサイトは `/travelogue/` 配下で見える。
+開発サーバではサイトは `/journey-days/` 配下で見える。
 
 本番相当の確認は次のとおりだ。
 

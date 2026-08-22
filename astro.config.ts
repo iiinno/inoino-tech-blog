@@ -21,7 +21,7 @@ import config from "./astro-paper.config";
 
 export default defineConfig({
   site: "https://iiinno.github.io",
-  base: "/travelogue",
+  base: "/journey-days",
   integrations: [
     mdx(),
     sitemap({
@@ -30,8 +30,8 @@ export default defineConfig({
     }),
   ],
   i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
+    locales: ["ja"],
+    defaultLocale: "ja",
     routing: {
       prefixDefaultLocale: false,
     },
