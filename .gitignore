@@ -37,4 +37,5 @@ __pycache__/
 compose.override.yaml
 
 # 非公開のしおり記事（public リポジトリに出さない）
-src/content/posts/2026-08-25-tokyo-chichibu-shiori.md
+src/content/posts/2026-08-25-tokyo-chichibu-shiori.mdx
+public/assets/shiori-illustrations/

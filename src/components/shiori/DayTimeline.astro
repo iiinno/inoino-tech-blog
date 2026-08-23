@@ -1,0 +1,115 @@
+---
+export interface TimelineEvent {
+  time: string;
+  title: string;
+  note?: string;
+  transfer?: boolean;
+}
+
+interface Props {
+  events: TimelineEvent[];
+}
+
+const { events } = Astro.props;
+---
+
+<ol class="day-timeline">
+  {
+    events.map(event => (
+      <li
+        class:list={[
+          "day-timeline__item",
+          event.transfer && "is-transfer",
+        ]}
+      >
+        <span class="day-timeline__dot" aria-hidden="true" />
+        <time class="day-timeline__time">{event.time}</time>
+        <div class="day-timeline__body">
+          <p class="day-timeline__title">{event.title}</p>
+          {event.note && <p class="day-timeline__note">{event.note}</p>}
+        </div>
+      </li>
+    ))
+  }
+</ol>
+
+<style>
+  .day-timeline {
+    list-style: none;
+    margin: 0.6rem 0 1rem;
+    padding: 0;
+  }
+
+  .day-timeline__item {
+    display: grid;
+    grid-template-columns: 0.75rem minmax(6.75rem, max-content) 1fr;
+    column-gap: 0.45rem;
+    position: relative;
+    padding: 0.28rem 0 0.42rem;
+  }
+
+  .day-timeline__item::before {
+    content: "";
+    position: absolute;
+    left: 0.28rem;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--color-border);
+  }
+
+  .day-timeline__item:first-child::before {
+    top: 0.7rem;
+  }
+
+  .day-timeline__item:last-child::before {
+    bottom: calc(100% - 0.7rem);
+  }
+
+  .day-timeline__dot {
+    grid-column: 1;
+    width: 0.55rem;
+    height: 0.55rem;
+    margin-top: 0.32rem;
+    border-radius: 50%;
+    background: var(--color-accent);
+    z-index: 1;
+  }
+
+  .is-transfer .day-timeline__dot {
+    width: 0.32rem;
+    height: 0.32rem;
+    margin-left: 0.11rem;
+    margin-top: 0.42rem;
+    background: var(--color-muted-foreground);
+  }
+
+  .day-timeline__time {
+    font-family: var(--font-app, ui-monospace, monospace);
+    font-variant-numeric: tabular-nums;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    color: var(--color-muted-foreground);
+    padding-top: 0.18rem;
+    white-space: nowrap;
+  }
+
+  .day-timeline__title {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.4;
+    color: var(--color-foreground);
+  }
+
+  .day-timeline__note {
+    margin: 0.12rem 0 0;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    color: var(--color-muted-foreground);
+  }
+
+  .is-transfer .day-timeline__title {
+    font-size: 0.84rem;
+    color: var(--color-muted-foreground);
+  }
+</style>
