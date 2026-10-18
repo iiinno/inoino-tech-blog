@@ -1,7 +1,7 @@
 # inoino Tech Blog
 
 個人ブログ「inoino Tech Blog」のリポジトリだ。
-日々のこと、好きなもの、考えたことなどを、旅行記に限らず書いていく。
+技術の学びや試したこと、日々の気づきなどを書いていく。
 
 Astro と AstroPaper テーマで静的サイトを生成し、GitHub Pages で公開する。
 
@@ -28,25 +28,15 @@ Node.js は `package.json` の `engines` どおり 22.12.0 以上が必要だ。
 
 `main` への push（および `workflow_dispatch`）で Actions が `astro build` し、GitHub Pages に載せる。
 
-## 3箇所の同期
+## リポジトリと公開
 
-同じコミットを次の3箇所で揃える。
+公開元は https://github.com/iiinno/inoino-tech-blog だ。
 
-| 場所 | 実体 | 役割 |
-|------|------|------|
-| ローカル | `C:\Users\inoue\travelogue`（Windows PC） | 作業本体 |
-| origin | `inouemasaki-ai-ts:travelogue`（Tailscale 経由のプライベートリポジトリ） | バックアップ |
-| github | https://github.com/iiinno/inoino-tech-blog （public） | GitHub Pages の公開元 |
+このリポジトリを `origin` として使う。
 
-リモート名は `origin` と `github` だ。
-
-記事を公開するには `git push github main` する。
+記事を公開するには `git push origin main` する。
 
 Actions がビルドし、https://iiinno.github.io/inoino-tech-blog/ にデプロイする。
-
-origin はバックアップなので、公開と合わせて `git push origin main` で同期する。
-
-ローカルの `main` は `github/main` を追跡している。
 
 ## 記事の書き方
 
@@ -76,7 +66,7 @@ origin はバックアップなので、公開と合わせて `git push origin m
 
 ## 画像
 
-記事の写真・地図は `public/assets/` に置く。
+記事の画像は `public/assets/` に置く。
 
 Markdown からの参照は `/inoino-tech-blog/assets/<ファイル名>` だ。
 
@@ -120,8 +110,4 @@ npm run preview
 
 スマホやクラウドエージェントからの編集は GitHub にだけ載ることがある。
 
-ローカルで作業する前に `git pull github main` で同期しろ。
-
-公開したらバックアップ用に `git push origin main` も忘れるな。
-
-3箇所が同じコミットになるようにする。
+ローカルで作業する前に `git pull --ff-only origin main` で同期する。

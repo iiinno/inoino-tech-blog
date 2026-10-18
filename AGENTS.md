@@ -2,12 +2,12 @@
 
 個人ブログ「inoino Tech Blog」を管理するリポジトリ。Astro（AstroPaper）で静的サイトを生成し、GitHub Pages で公開する。
 記事は日本語の Markdown で書く。
-日々のこと、好きなもの、考えたことなどを扱い、旅行記にテーマを限定しない。
+技術の学びや試したこと、日々の気づきなどを扱う。
 
 ## 構成
 
 - `src/content/posts/` — ブログ記事の本文。ファイル名は `YYYY-MM-DD-<スラッグ>.md`
-- `public/assets/` — 写真・地図などの素材。記事からは `/inoino-tech-blog/assets/<ファイル名>` で参照する
+- `public/assets/` — 記事の画像。記事からは `/inoino-tech-blog/assets/<ファイル名>` で参照する
 - `src/content/pages/` — About など固定ページ
 
 ## 執筆ルール

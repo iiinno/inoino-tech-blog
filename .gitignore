@@ -36,6 +36,6 @@ __pycache__/
 # docker compose
 compose.override.yaml
 
-# 非公開のしおり記事（public リポジトリに出さない）
-src/content/posts/2026-08-25-tokyo-chichibu-shiori.mdx
-public/assets/shiori-illustrations/
+# 既存の非公開コンテンツ（public リポジトリに含めない）
+src/content/posts/2026-08-25-*.mdx
+public/assets/*-illustrations/
