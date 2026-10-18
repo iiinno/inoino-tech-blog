@@ -21,7 +21,7 @@ import config from "./astro-paper.config";
 
 export default defineConfig({
   site: "https://iiinno.github.io",
-  base: "/journey-days",
+  base: "/inoino-tech-blog",
   integrations: [
     mdx(),
     sitemap({

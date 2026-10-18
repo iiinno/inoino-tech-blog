@@ -1,16 +1,16 @@
 ---
 title: "About"
-description: "iiinno とこのサイトについて"
+description: "inoino Tech Blog と書き手 iiinno について"
 ---
 
 ## iiinno について
 
-（ここに自己紹介を書く）
+inoino Tech Blog を書いている iiinno です。
 
 ## このサイトについて
 
-iiinno の旅と日々の記録をまとめるサイト。
-訪れた場所、食べたもの、聖地巡礼の記録を置いていく。
+inoino Tech Blog は、日々のこと、好きなもの、考えたことを書いていく個人ブログです。
+旅行の記録も、ちょっとした気づきも、テーマを決めすぎずに残していきます。
 
 ## リンク
 

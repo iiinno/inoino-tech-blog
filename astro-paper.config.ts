@@ -2,12 +2,12 @@ import { defineAstroPaperConfig } from "./src/types/config";
 
 export default defineAstroPaperConfig({
   site: {
-    url: "https://iiinno.github.io/journey-days/",
-    title: "Journey-Days",
-    description: "旅と日々の記録",
+    url: "https://iiinno.github.io/inoino-tech-blog/",
+    title: "inoino Tech Blog",
+    description: "inoino Tech Blog — 日々のこと、好きなもの、考えたことを綴る個人ブログ。",
     author: "iiinno",
     profile: "https://github.com/iiinno",
-    ogImage: "default-og.jpg",
+    ogImage: "og.png",
     lang: "ja",
     timezone: "Asia/Tokyo",
     dir: "ltr",
@@ -24,12 +24,12 @@ export default defineAstroPaperConfig({
     showBackButton: true,
     editPost: {
       enabled: true,
-      url: "https://github.com/iiinno/journey-days/edit/main/",
+      url: "https://github.com/iiinno/inoino-tech-blog/edit/main/",
     },
     search: "pagefind",
   },
   socials: [
-    { name: "github", url: "https://github.com/iiinno/journey-days" },
+    { name: "github", url: "https://github.com/iiinno/inoino-tech-blog" },
   ],
   shareLinks: [
     { name: "x", url: "https://x.com/intent/post?url=" },

@@ -1,10 +1,11 @@
-# travelogue
+# inoino Tech Blog
 
-旅行記サイトのリポジトリだ。
+個人ブログ「inoino Tech Blog」のリポジトリだ。
+日々のこと、好きなもの、考えたことなどを、旅行記に限らず書いていく。
 
 Astro と AstroPaper テーマで静的サイトを生成し、GitHub Pages で公開する。
 
-公開 URL は https://iiinno.github.io/journey-days/ だ。
+公開 URL は https://iiinno.github.io/inoino-tech-blog/ だ。
 
 新しいチャットやクラウドエージェントは、この README と `AGENTS.md` を読めば作業体制が分かる。
 
@@ -15,9 +16,9 @@ Astro と AstroPaper テーマで静的サイトを生成し、GitHub Pages で�
 - GitHub Actions（`.github/workflows/deploy.yml`）による自動ビルド・デプロイ
 - GitHub Pages ホスティング
 
-`astro.config.ts` に `site: "https://iiinno.github.io"` と `base: "/journey-days"` が設定済みだ。
+`astro.config.ts` に `site: "https://iiinno.github.io"` と `base: "/inoino-tech-blog"` が設定済みだ。
 
-サイトはルートではなく `/journey-days/` 配下で配信される。
+サイトはルートではなく `/inoino-tech-blog/` 配下で配信される。
 
 `base` を外すとリンクと画像パスが壊れる。
 
@@ -35,13 +36,13 @@ Node.js は `package.json` の `engines` どおり 22.12.0 以上が必要だ。
 |------|------|------|
 | ローカル | `C:\Users\inoue\travelogue`（Windows PC） | 作業本体 |
 | origin | `inouemasaki-ai-ts:travelogue`（Tailscale 経由のプライベートリポジトリ） | バックアップ |
-| github | https://github.com/iiinno/journey-days （public） | GitHub Pages の公開元 |
+| github | https://github.com/iiinno/inoino-tech-blog （public） | GitHub Pages の公開元 |
 
 リモート名は `origin` と `github` だ。
 
 記事を公開するには `git push github main` する。
 
-Actions がビルドし、https://iiinno.github.io/journey-days/ にデプロイする。
+Actions がビルドし、https://iiinno.github.io/inoino-tech-blog/ にデプロイする。
 
 origin はバックアップなので、公開と合わせて `git push origin main` で同期する。
 
@@ -49,7 +50,7 @@ origin はバックアップなので、公開と合わせて `git push origin m
 
 ## 記事の書き方
 
-旅行記の本文は `src/content/posts/` に Markdown（または MDX）で置く。
+ブログ記事の本文は `src/content/posts/` に Markdown（または MDX）で置く。
 
 ファイル名は `YYYY-MM-DD-<スラッグ>.md` だ。
 
@@ -77,7 +78,7 @@ origin はバックアップなので、公開と合わせて `git push origin m
 
 記事の写真・地図は `public/assets/` に置く。
 
-Markdown からの参照は `/journey-days/assets/<ファイル名>` だ。
+Markdown からの参照は `/inoino-tech-blog/assets/<ファイル名>` だ。
 
 `base` があるため `/assets/...` だけでは 404 になる。
 
@@ -85,9 +86,17 @@ Markdown からの参照は `/journey-days/assets/<ファイル名>` だ。
 
 カバー画像（`ogImage`）は front matter で指定できる。
 
-未指定なら AstroPaper の動的 OG 画像、または `public/default-og.jpg` が使われる。
+未指定なら、サイト名や記事タイトルを使った動的 OG 画像が使われる。
 
-テーマ同梱の画像は `src/assets/images/` にある。記事用の素材置き場ではない。
+## X での共有
+
+公開した記事の URL を X の投稿に貼り付けて共有する。
+記事末尾の X ボタンからも共有できる。
+タイトル・説明・OG 画像をカード表示用のメタデータとして出力する。
+実際のカード表示は、公開後の X 側の取得状況に依存する。
+
+サイト名・紹介文は `astro-paper.config.ts`、自己紹介は `src/content/pages/about.md` で変更する。
+公開 URL は `/inoino-tech-blog/` 配下を使う。
 
 ## ローカル開発
 
@@ -96,7 +105,7 @@ npm install
 npm run dev
 ```
 
-開発サーバではサイトは `/journey-days/` 配下で見える。
+開発サーバではサイトは `/inoino-tech-blog/` 配下で見える。
 
 本番相当の確認は次のとおりだ。
 
